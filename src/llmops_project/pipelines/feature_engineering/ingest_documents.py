@@ -1,50 +1,17 @@
 # %% IMPORTS
+import os
 import typing as T
 from pathlib import Path
 
-import mlflow
-from llmops_project.io import services
-from llmops_project.pipelines import base
-from langchain_community.vectorstores import FAISS
-from langchain_aws import BedrockEmbeddings
-from llmops_project.io.vector_db import QdrantVectorDB
 import dotenv
-import os
+import mlflow
+from langchain_aws import BedrockEmbeddings
+from langchain_community.vectorstores import FAISS
+from llmops_project.io import services
+from llmops_project.io.vector_db import QdrantVectorDB
+from llmops_project.pipelines import base
 
 logger = services.LoggerService().logger()
-
-
-# # %% Function to test vectorDB
-def test_faiss_vectordb():
-    # TODO: Refactor and move to tests
-    # Ensure the config path is relative to this script's location
-    script_dir = str(Path(__file__).parent.parent.parent.parent)
-    config_path = script_dir + "/confs/rag_chain_config.yaml"
-    print("Config Path: ", config_path)
-
-    # Load the chain's configuration
-    model_config = mlflow.models.ModelConfig(development_config=config_path)
-    retriever_config = model_config.get("retriever_config")
-
-    # Load Vector Store
-    embeddings = BedrockEmbeddings(model=retriever_config.get("embedding_model"))  # type: ignore
-    vector_store_path = script_dir + retriever_config.get("vector_store_path")
-
-    vector_store = FAISS.load_local(
-        embeddings=embeddings, folder_path=vector_store_path, allow_dangerous_deserialization=True
-    )
-
-    # configure document retrieval
-    retriever = vector_store.as_retriever(
-        search_kwargs={"k": retriever_config.get("parameters")["k"]}
-    )
-
-    # Perform a similarity search
-    query = "What is the content of the documents?"
-    results = retriever.invoke(query)
-
-    for doc in results:
-        logger.debug(f"Content: {doc.page_content}, Metadata: {doc.metadata}")
 
 
 # %% Job class for ingesting documents and updating the vector database

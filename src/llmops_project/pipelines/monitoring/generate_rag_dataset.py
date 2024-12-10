@@ -2,11 +2,10 @@ import typing as T
 from pathlib import Path
 
 import nest_asyncio
-from llmops_project.pipelines import base
 from llama_index.core import SimpleDirectoryReader
 from llama_index.core.llama_dataset.generator import RagDatasetGenerator
-from llama_index.llms.ollama import Ollama
-
+from llama_index.llms.bedrock import Bedrock
+from llmops_project.pipelines import base
 
 nest_asyncio.apply()
 
@@ -53,11 +52,11 @@ class GenerateRagDatasetJob(base.Job):  # type: ignore[misc]
         logger.info("Loaded {} documents".format(len(documents)))
 
         # Initialize the LLM with the specified model
-        llm = Ollama(model=model, request_timeout=60.0)
+        llm = Bedrock(model=model, request_timeout=60.0)
 
         # Generate the dataset from the documents
         dataset_generator = RagDatasetGenerator.from_documents(
-            documents[:1],
+            documents,
             llm=llm,
             num_questions_per_chunk=2,
             show_progress=True,
@@ -72,6 +71,8 @@ class GenerateRagDatasetJob(base.Job):  # type: ignore[misc]
 
         # Save the dataset as a JSON file
         rag_dataset.save_json(final_dataset_json_path)
+
+        logger.success("RAG dataset generated successfully and saved to {}", final_dataset_path)
 
     @T.override
     def run(self) -> base.Locals:

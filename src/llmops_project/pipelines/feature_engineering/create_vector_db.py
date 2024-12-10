@@ -1,14 +1,14 @@
 # %% IMPORTS
+import os
 import typing as T
 from pathlib import Path
 
+import dotenv
+from langchain_aws import BedrockEmbeddings
 from llmops_project.io.vector_db import QdrantVectorDB
 
 # import faiss
 from llmops_project.pipelines import base
-from langchain_aws import BedrockEmbeddings
-import dotenv
-import os
 
 
 # %% Job class for creating the vector database

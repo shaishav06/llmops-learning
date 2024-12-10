@@ -159,18 +159,18 @@ This section details the requirements, actions, and next steps to kickstart your
 
 Use the package manager [Poetry](https://python-poetry.org/):
 
-## Credentials for Bedrock / OpenAI
+## Credentials for LLM
 
 To access Bedrock, OpenAI, or any other LLM provider, you need to set up your  credentials. These credentials will allow the package to authenticate and interact with the respective services.
+In this code template we used Bedrock but feel free to change it to your needs.
 
 Example for AWS 
 
  **Environment Variables**:
-  - Alternatively, you can set the AWS credentials as environment variables:
     ```bash
     export AWS_ACCESS_KEY_ID=your_access_key_id
     export AWS_SECRET_ACCESS_KEY=your_secret_access_key
-    export AWS_DEFAULT_REGION=your_default_region
+    export AWS_REGION=your_default_region
     ```
 
 
@@ -232,13 +232,53 @@ You can also print the full schema supported by this package using `poetry run l
 The project code can be executed with poetry during your development, this is the order recommended:
 
 ```bash
-$ poetry run [package] confs/generate_rag_dataset.yaml # Run once to generate rag dataset
-$ poetry run [package] confs/feature_eng.yaml # Creates Vector DB and Injests documents
-$ poetry run [package] confs/deployment.yaml # Deploys model on model registry
-$ poetry run [package] confs/monitoring.yaml # Monitors Model Inferences "every week"
-
-
+$ poetry run llmops-project confs/generate_rag_dataset.yaml # Run once to generate rag dataset
+$ poetry run llmops-project confs/feature_eng.yaml # Creates Vector DB and Injests documents
+$ poetry run llmops-project confs/deployment.yaml # Deploys model on model registry
+$ poetry run llmops-project confs/monitoring.yaml # Monitors Model Inferences "every week"
 ```
+
+To deploy the serving endpoint you can use the following automation:
+
+```bash
+$ inv serve # Launches Litserve server on port 8000
+```
+
+Note: you can also deploy this as a container /cloud with the instructions under `/serving_endpoint`
+
+## Pipelines
+This project is organized under a manager pattern, each manager is responsible for all the workflow orchestration betwen tasks/ jobs. (In production you could use airflow etc.. for this type of thing)
+
+### Generate Rag Dataset
+This pipeline generates a rag QA dataset under `/data/datasets/``
+
+### Feature Engineering 
+This pipeline creates a Vector Database instance collection and ingests documents onto it in the form of vectors.
+![Vector Database](static/vector_db.png)
+
+### Deployment 
+This pipeline:
+-  registers a model using Mlflow 
+-  promote the model to `champion`alias
+-  validates model input /output and singatures
+-  sets tag "passed_tests" on mlflow registry to True/False depending if model passed tests
+-  runs an evaluation of QA factfullness on the QA dataset we created previously
+-  depending on the result of this evaluation, the model will be asigned a tag `beats_threshold` to True or False
+-  if the model `beats_threshold` and `passed_tests` we can promote it to `production`
+
+At the end of this pipeline we should have a model version on the model registry in production.
+![Model Version](static/model_version.png)
+
+
+### Monitoring
+This pipeline is meant to be run as weekly job to monitor the performance of the model against given metrics such as default metrics or even LLM as a judge.
+![Monitoring](static/monitoring.png)
+
+These metrics are also saved with a display in case you want to load it in a dashboard elsewhere.
+![Guage](static/guage.png)
+
+
+
 
 In production, you can build, ship, and run the project as a Python package:
 
@@ -246,7 +286,7 @@ In production, you can build, ship, and run the project as a Python package:
 poetry build
 poetry publish # optional
 python -m pip install [package]
-[package] confs/inference.yaml
+[package] confs/deployment.yaml
 ```
 
 You can also install and use this package as a library for another AI/ML project:
@@ -557,19 +597,7 @@ This section provides resources for building packages for Python and AI/ML/MLOps
 - https://github.com/josephmisiti/awesome-machine-learning
 - https://github.com/visenger/awesome-mlops
 
-```bash
 
-poetry install
-```
-
-# Usage
-
-```bash
-poetry run Agent-Recipies
-docker run -p 6333:6333 -p 6334:6334 \
-    -v $(pwd)/qdrant_storage:/qdrant/storage:z \
-    qdrant/qdrant
-```
 
 
 

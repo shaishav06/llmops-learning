@@ -1,9 +1,10 @@
-import pytest
 from unittest import mock
-from llmops_project.pipelines.feature_engineering.ingest_documents import IngestAndUpdateVectorDBJob
-from llmops_project.io.vector_db import QdrantVectorDB
+
+import pytest
 from langchain_aws import BedrockEmbeddings
 from llmops_project.io import services
+from llmops_project.io.vector_db import QdrantVectorDB
+from llmops_project.pipelines.feature_engineering.ingest_documents import IngestAndUpdateVectorDBJob
 
 # %% IMPORTS
 

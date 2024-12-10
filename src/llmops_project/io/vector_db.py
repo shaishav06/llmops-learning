@@ -3,18 +3,17 @@ import os
 from abc import ABC, abstractmethod
 from typing import List, Optional
 
-
 # Import utility functions
 from langchain_aws import BedrockEmbeddings
 from langchain_community.docstore.in_memory import InMemoryDocstore
 from langchain_community.document_loaders import DirectoryLoader
 from langchain_community.vectorstores import FAISS
 from langchain_core.documents import Document
+from langchain_qdrant import QdrantVectorStore
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from PyPDF2 import PdfReader
 from qdrant_client import QdrantClient
 from qdrant_client.models import Distance, VectorParams
-from langchain_qdrant import QdrantVectorStore
 
 
 class VectorDB(ABC):

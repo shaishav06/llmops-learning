@@ -8,20 +8,6 @@ services:
     environment:
       - MLFLOW_HOST=0.0.0.0
     command: mlflow server
-
-  mlflow_gateway:
-    build:
-      context: .
-      dockerfile: mlflow_gateway/Dockerfile
-    ports:
-      - 7001:7000
-    environment:
-      - MLFLOW_HOST=0.0.0.0
-      - MLFLOW_DEPLOYMENTS_CONFIG=/confs/ai_gateway.yaml
-      - OPENAI_API_KEY
-    env_file:
-      - .env
-    command: mlflow gateway start --config-path /confs/ai_gateway.yaml --port 7000 --host 0.0.0.0
   
   qdrant:
       image: qdrant/qdrant:latest

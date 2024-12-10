@@ -8,10 +8,10 @@ from llmops_project.pipelines.feature_engineering.create_vector_db import Create
 from llmops_project.pipelines.feature_engineering.ingest_documents import IngestAndUpdateVectorDBJob
 from llmops_project.pipelines.managers.deployment_manager import DeploymentJob
 from llmops_project.pipelines.managers.feature_engineering_manager import FeatureEngineeringJob
+from llmops_project.pipelines.managers.monitoring_manager import MonitoringJob
 from llmops_project.pipelines.monitoring.generate_rag_dataset import GenerateRagDatasetJob
 from llmops_project.pipelines.monitoring.post_deploy_eval import MonitoringEvalJob
 from llmops_project.pipelines.monitoring.pre_deploy_eval import EvaluateModelJob
-from llmops_project.pipelines.managers.monitoring_manager import MonitoringJob
 
 # %% TYPES
 

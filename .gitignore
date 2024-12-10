@@ -28,7 +28,7 @@ terraform.tfstate
 /mlruns/*
 /outputs/*
 !**/.gitkeep
-
+/qdrant_data/*
 
 # Python
 *.py[cod]

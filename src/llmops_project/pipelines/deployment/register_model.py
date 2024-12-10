@@ -42,7 +42,7 @@ def register_model(client: MlflowClient, run_id: str, model_name: str):
         f"Model registered successfully with name: {model_name}, version {result.version}"
     )
 
-    client.set_registered_model_tag(name=model_name, key="model", value="llama3.2")
+    client.set_registered_model_tag(name=model_name, key="model", value="claude3-haiku")
 
 
 def load_model_by_alias(model_name, alias=None):

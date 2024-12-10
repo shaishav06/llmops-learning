@@ -1,8 +1,8 @@
 import typing as T
+from pathlib import Path
 
 from llmops_project.pipelines import base
 from llmops_project.pipelines.monitoring.post_deploy_eval import MonitoringEvalJob
-from pathlib import Path
 
 
 # %% Job class for logging and registering the RAG model

@@ -127,8 +127,8 @@ class MlflowService(Service):  # type: ignore[misc]
         raise
 
     # server uri
-    tracking_uri: str = "http://127.0.0.1:5000"
-    registry_uri: str = "http://127.0.0.1:5000"
+    tracking_uri: str = "http://127.0.0.1:5001"
+    registry_uri: str = "http://127.0.0.1:5001"
     # experiment
     experiment_name: str = "rag_chatbot_experiment"
     # registry

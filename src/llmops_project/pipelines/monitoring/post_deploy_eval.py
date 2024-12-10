@@ -5,10 +5,10 @@ from pathlib import Path
 from typing import Optional
 
 import mlflow
+import pandas as pd
 import plotly.graph_objects as go
 from llmops_project.pipelines import base
 from plotly.subplots import make_subplots
-import pandas as pd
 
 
 def filter_generations(df):
