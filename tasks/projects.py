@@ -5,6 +5,7 @@
 # %% IMPORTS
 
 import json
+
 from invoke.context import Context
 from invoke.tasks import call, task
 
@@ -39,7 +40,7 @@ def environment(ctx: Context) -> None:
     with open(ENVIRONMENT, "w") as writer:
         # Safe as YAML is a superset of JSON
         json.dump(configuration, writer, indent=4)
-        writer.write("\n") # add new line at the end
+        writer.write("\n")  # add new line at the end
 
 
 @task

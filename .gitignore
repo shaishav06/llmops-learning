@@ -10,6 +10,9 @@
 .mypy_cache/
 .ruff_cache/
 .pytest_cache/
+.terraform.*
+.terraform
+terraform.tfstate
 
 # Editor
 /.idea/
@@ -25,6 +28,9 @@
 /mlruns/*
 /outputs/*
 !**/.gitkeep
+/qdrant_data/*
+qa_dataset.csv
+qa_dataset.json
 
 # Python
 *.py[cod]

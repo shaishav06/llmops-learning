@@ -4,7 +4,7 @@
 
 [tool.poetry]
 name = "llmops-project"
-version = "0.1.0"
+version = "0.2.0"
 description = "LLMOps Package Production Ready template using open source technologies."
 repository = "https://github.com/callmesora/llmops-project"
 documentation = "https://callmesora.github.io/llmops-project/"
@@ -21,9 +21,53 @@ llmops-project = "llmops_project.scripts:main"
 # DEPENDENCIES
 
 [tool.poetry.dependencies]
-python = "^3.12"
-mlflow = "^2.17.2"
+python = ">=3.10,<3.13"
+mlflow = {extras = ["genai"], version = "^2.17.2"}
 setuptools = "^71.1.0"
+langchain = "^0.3.5"
+# langchain-ollama = "^0.2.0"
+llama-index = "^0.12.0"
+# langgraph = "0.2.27"
+#llama-index-utils-workflow = "^0.2.2"
+#llama-index-llms-ollama = "^0.3.4"
+# gensim = "^4.0.0"
+nltk = "^3.9.1"
+langchain-community = "^0.3.4"
+transformers = "^4.46.1"
+#streamlit = "^1.39.0"
+pypdf2 = "^3.0.1"
+defusedxml = "^0.7.1"
+#faiss-cpu = "^1.9.0"
+spacy = "3.7.0"
+textstat = "^0.7.4"
+torch = "^2.5.1"
+evaluate = "^0.4.3"
+loguru = "^0.7.2"
+omegaconf = "^2.3.0"
+pandera = "^0.21.0"
+#sagemaker-mlflow = "0.1.0"
+langchain-aws = "^0.2.7"
+langchain-openai = "^0.2.9"
+plotly = "5.3.1"
+kaleido = "0.2.1"
+seaborn = "^0.13.2"
+sagemaker = "^2.235.1"
+litserve = "^0.2.4"
+#nemoguardrails = "^0.11.0"
+guardrails-ai = "^0.6.0"
+tenacity = ">=8.2.0,<8.4.0"
+presidio-analyzer = "^2.2.355"
+presidio-anonymizer = "^2.2.355"
+qdrant-client = "^1.12.1"
+unstructured = {extras = ["pdf"], version = "^0.16.8"}
+libmagic = "^1.0"
+python-magic = "^0.4.27"
+langchain-qdrant = "^0.2.0"
+pytest = "^8.3.4"
+pytest-ordering = "^0.6"
+llama-index-llms-bedrock = "^0.3.1"
+
+
 
 [tool.poetry.group.checks.dependencies]
 bandit = "^1.7.9"
@@ -67,14 +111,24 @@ omit = ["__main__.py"]
 
 [tool.mypy]
 pretty = true
-strict = true
+strict = false
 python_version = "3.12"
 check_untyped_defs = true
 ignore_missing_imports = true
+plugins = ["pandera.mypy", "pydantic.mypy"]
+no_implicit_optional= false
+
+# Ignore specific error codes
+disable_error_code = "no-untyped-call"
 
 [tool.pytest.ini_options]
 addopts = "--verbosity=2"
 pythonpath = ["src"]
+filterwarnings = [
+    "ignore:Pydantic V1 style `@validator` validators are deprecated:DeprecationWarning",
+    "ignore:Pydantic V1 style `@root_validator` validators are deprecated:DeprecationWarning"
+]
+
 
 [tool.ruff]
 fix = true

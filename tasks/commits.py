@@ -11,7 +11,7 @@ from invoke.tasks import task
 @task
 def info(ctx: Context) -> None:
     """Print a guide for messages."""
-    ctx.run("poetry run cz info")
+    ctx.run("poetry run cz info", pty=True)
 
 
 @task
