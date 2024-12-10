@@ -13,4 +13,9 @@ jobs:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/setup
       - run: poetry install --with checks
-      - run: poetry run invoke checks
+      - run: poetry run invoke checks.format
+      - run: poetry run invoke checks.code
+      - run: poetry run invoke checks.type
+      - run: poetry run invoke checks.security
+      # TODO: Add tests once figuring out how to mock mlflow and qdrant
+      
