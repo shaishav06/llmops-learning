@@ -1,0 +1,7 @@
+job:
+  KIND: GenerateRagDatasetJob
+  data_path: "/data/documents/"
+  qa_dataset_path_csv: "data/datasets/rag_dataset" # will save a QA dataset in csv and json
+  qa_dataset_path_json: "data/datasets/rag_dataset" # will save a QA dataset in csv and json
+  llm_model: "llama3.2" # model_id to generate the QA dataset
+  

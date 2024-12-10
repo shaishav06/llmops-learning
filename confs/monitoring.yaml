@@ -1,0 +1,8 @@
+job:
+  KIND: MonitoringEvalJob
+  vector_store_path: "/faiss_db/"
+  registry_model_name: "rag-chatbot"
+
+  trace_experiment_name: "rag_chatbot_experiment"
+  monitoring_experiment_name: "monitoring"
+

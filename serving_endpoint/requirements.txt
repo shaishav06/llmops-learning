@@ -1,0 +1,28 @@
+mlflow-skinny==2.17.2
+sagemaker-mlflow==0.1.0
+cloudpickle==3.1.0
+colorama==0.4.6
+langchain-aws==0.2.7
+langchain-community==0.3.4
+langchain-ollama==0.2.0
+langchain-openai==0.2.9
+langchain==0.3.7
+langgraph==0.2.27
+numpy==1.26.4
+psutil==6.1.0
+pydantic==2.9.2
+rich==13.9.4
+tornado==6.4.1
+litserve==0.2.4
+langchain-qdrant==0.2.0
+
+guardrails-ai==0.6.0 ; python_version >= "3.10" and python_version < "3.13" \
+    --hash=sha256:6bd634b56ef34c6027ea066ea411f895261f14204e0592bdefb446875ce68eea \
+    --hash=sha256:a11a0aad96ecbb412bce58533fcaaa03ca6d21872f5bad02babffe4959a13e17
+guardrails-api-client==0.4.0a1 ; python_version >= "3.10" and python_version < "3.13" \
+    --hash=sha256:102e70cd53704298cd3d71c58bdac71bc6bfa2c341bc3b336a4ec434c540e9b4 \
+    --hash=sha256:163352bc09b295966d206bc5e912edb29fc3cae8f7749a6ceea1a80aae816029
+guardrails-hub-types==0.0.4 ; python_version >= "3.10" and python_version < "3.13" \
+    --hash=sha256:a5ad863fd6b354e41c3d83d8c1e835f7243a0ae0ec944b6601d1e3ee5d806a51 \
+    --hash=sha256:ad86faecc142e853d6c6fa24ecb50723c86f834fbe1f2e6b932f2921a08b60b3
+pandas

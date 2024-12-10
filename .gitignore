@@ -10,6 +10,9 @@
 .mypy_cache/
 .ruff_cache/
 .pytest_cache/
+.terraform.*
+.terraform
+terraform.tfstate
 
 # Editor
 /.idea/
@@ -25,6 +28,7 @@
 /mlruns/*
 /outputs/*
 !**/.gitkeep
+
 
 # Python
 *.py[cod]
