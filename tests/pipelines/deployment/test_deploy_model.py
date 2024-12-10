@@ -1,5 +1,5 @@
 import pytest
-from Agent_Recipies.pipelines.deployment.deploy_model import DeployModelJob
+from llmops_project.pipelines.deployment.deploy_model import DeployModelJob
 
 # %% IMPORTS
 

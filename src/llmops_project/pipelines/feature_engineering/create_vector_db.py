@@ -2,10 +2,10 @@
 import typing as T
 from pathlib import Path
 
-from Agent_Recipies.io.vector_db import QdrantVectorDB
+from llmops_project.io.vector_db import QdrantVectorDB
 
 # import faiss
-from Agent_Recipies.pipelines import base
+from llmops_project.pipelines import base
 from langchain_aws import BedrockEmbeddings
 import dotenv
 import os
@@ -68,8 +68,8 @@ if __name__ == "__main__":
 
     from pathlib import Path
 
-    from Agent_Recipies import settings
-    from Agent_Recipies.io import configs
+    from llmops_project import settings
+    from llmops_project.io import configs
 
     script_dir = str(Path(__file__).parent.parent.parent.parent.parent)
     config_files = ["/rag_chain_config.yaml", "/feature_eng.yaml"]

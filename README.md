@@ -218,7 +218,7 @@ job:
   production_alias: "production"
   registry_model_name: "rag-chatbot-with-guardrails"
   llm_confs: "/confs/rag_chain_config.yaml"
-  llm_model_code_path: "/src/Agent_Recipies/models/chatbot_with_guardrails.py"
+  llm_model_code_path: "/src/llmops_project/models/chatbot_with_guardrails.py"
   vector_store_path: "http://localhost:6333"
 ```
 

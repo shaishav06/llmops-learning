@@ -5,7 +5,7 @@
 import pydantic as pdt
 import pydantic_settings as pdts
 
-from Agent_Recipies import pipelines
+from llmops_project import pipelines
 
 # %% SETTINGS
 

@@ -3,10 +3,10 @@ import typing as T
 from pathlib import Path
 from typing import Any, Dict, List
 
-import Agent_Recipies.io.services as services
+import llmops_project.io.services as services
 import mlflow
 import mlflow.pyfunc
-from Agent_Recipies.pipelines import base
+from llmops_project.pipelines import base
 from mlflow import MlflowClient
 from pydantic import BaseModel, ValidationError
 
@@ -250,8 +250,8 @@ class LogAndRegisterModelJob(base.Job):  # type: ignore[misc]
 if __name__ == "__main__":
     from pathlib import Path
 
-    from Agent_Recipies import settings
-    from Agent_Recipies.io import configs
+    from llmops_project import settings
+    from llmops_project.io import configs
 
     script_dir = str(Path(__file__).parent.parent.parent.parent.parent)
     config_files = ["/deployment.yaml"]

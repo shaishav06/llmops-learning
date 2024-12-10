@@ -1,9 +1,9 @@
 import pytest
 from unittest import mock
-from Agent_Recipies.pipelines.feature_engineering.create_vector_db import CreateVectorDBJob
-from Agent_Recipies.io.vector_db import QdrantVectorDB
+from llmops_project.pipelines.feature_engineering.create_vector_db import CreateVectorDBJob
+from llmops_project.io.vector_db import QdrantVectorDB
 from langchain_aws import BedrockEmbeddings
-from Agent_Recipies.io import services
+from llmops_project.io import services
 from langchain_qdrant import QdrantVectorStore
 
 # %% IMPORTS

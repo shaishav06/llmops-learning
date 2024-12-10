@@ -7,7 +7,7 @@ import typing as T
 
 import omegaconf
 import pytest
-from Agent_Recipies.io import services
+from llmops_project.io import services
 from _pytest import logging as pl
 
 # %% CONFIGS

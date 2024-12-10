@@ -16,8 +16,8 @@ import argparse
 import json
 import sys
 
-from Agent_Recipies import settings
-from Agent_Recipies.io import configs
+from llmops_project import settings
+from llmops_project.io import configs
 
 # %% PARSERS
 

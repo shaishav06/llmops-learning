@@ -3,11 +3,11 @@ import typing as T
 from pathlib import Path
 
 import mlflow
-from Agent_Recipies.io import services
-from Agent_Recipies.pipelines import base
+from llmops_project.io import services
+from llmops_project.pipelines import base
 from langchain_community.vectorstores import FAISS
 from langchain_aws import BedrockEmbeddings
-from Agent_Recipies.io.vector_db import QdrantVectorDB
+from llmops_project.io.vector_db import QdrantVectorDB
 import dotenv
 import os
 
@@ -99,8 +99,8 @@ class IngestAndUpdateVectorDBJob(base.Job):  # type: ignore[misc]
 if __name__ == "__main__":
     # Test the pipeline
 
-    from Agent_Recipies import settings
-    from Agent_Recipies.io import configs
+    from llmops_project import settings
+    from llmops_project.io import configs
 
     script_dir = str(Path(__file__).parent.parent.parent.parent.parent)
     config_files = ["/rag_chain_config.yaml", "/feature_eng.yaml"]

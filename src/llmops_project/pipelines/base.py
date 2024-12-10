@@ -8,7 +8,7 @@ import typing as T
 
 import pydantic as pdt
 
-from Agent_Recipies.io import services
+from llmops_project.io import services
 
 # %% TYPES
 

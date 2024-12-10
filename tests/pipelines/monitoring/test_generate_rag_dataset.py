@@ -1,6 +1,6 @@
 import pytest
 from pathlib import Path
-from Agent_Recipies.pipelines.monitoring.generate_rag_dataset import GenerateRagDatasetJob
+from llmops_project.pipelines.monitoring.generate_rag_dataset import GenerateRagDatasetJob
 
 
 @pytest.mark.parametrize(

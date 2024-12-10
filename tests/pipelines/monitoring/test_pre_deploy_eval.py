@@ -1,5 +1,5 @@
 import pytest
-from Agent_Recipies.pipelines.monitoring.pre_deploy_eval import EvaluateModelJob
+from llmops_project.pipelines.monitoring.pre_deploy_eval import EvaluateModelJob
 
 # %% TESTS
 

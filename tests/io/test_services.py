@@ -2,7 +2,7 @@
 
 import _pytest.logging as pl
 import mlflow
-from Agent_Recipies.io import services
+from llmops_project.io import services
 # %% SERVICES
 
 

@@ -2,7 +2,7 @@ import typing as T
 from pathlib import Path
 
 import nest_asyncio
-from Agent_Recipies.pipelines import base
+from llmops_project.pipelines import base
 from llama_index.core import SimpleDirectoryReader
 from llama_index.core.llama_dataset.generator import RagDatasetGenerator
 from llama_index.llms.ollama import Ollama
@@ -104,8 +104,8 @@ class GenerateRagDatasetJob(base.Job):  # type: ignore[misc]
 if __name__ == "__main__":
     from pathlib import Path
 
-    from Agent_Recipies import settings
-    from Agent_Recipies.io import configs
+    from llmops_project import settings
+    from llmops_project.io import configs
 
     script_dir = str(Path(__file__).parent.parent.parent.parent.parent)
     config_files = ["/generate_rag_dataset.yaml"]

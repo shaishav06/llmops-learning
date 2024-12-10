@@ -1,6 +1,6 @@
 # %% IMPORTS
-from Agent_Recipies.io import services
-from Agent_Recipies.pipelines import base
+from llmops_project.io import services
+from llmops_project.pipelines import base
 
 # %% JOBS
 

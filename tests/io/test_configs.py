@@ -3,7 +3,7 @@
 import os
 
 import omegaconf as oc
-from Agent_Recipies.io import configs
+from llmops_project.io import configs
 
 # %% PARSERS
 

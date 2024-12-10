@@ -1,10 +1,10 @@
 import typing as T
 from pathlib import Path
 
-from Agent_Recipies.pipelines import base
-from Agent_Recipies.pipelines.deployment.deploy_model import DeployModelJob
-from Agent_Recipies.pipelines.deployment.register_model import LogAndRegisterModelJob
-from Agent_Recipies.pipelines.monitoring.pre_deploy_eval import EvaluateModelJob
+from llmops_project.pipelines import base
+from llmops_project.pipelines.deployment.deploy_model import DeployModelJob
+from llmops_project.pipelines.deployment.register_model import LogAndRegisterModelJob
+from llmops_project.pipelines.monitoring.pre_deploy_eval import EvaluateModelJob
 
 AUTOMATIC_DEPLOYMENT = True
 
@@ -84,8 +84,8 @@ class DeploymentJob(base.Job):  # type: ignore[misc]
 
 
 if __name__ == "__main__":
-    from Agent_Recipies import settings
-    from Agent_Recipies.io import configs
+    from llmops_project import settings
+    from llmops_project.io import configs
 
     script_dir = str(Path(__file__).parent.parent.parent.parent.parent)
     config_files = ["/deployment.yaml", "/monitoring.yaml"]

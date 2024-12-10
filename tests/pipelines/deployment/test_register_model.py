@@ -1,5 +1,5 @@
 import pytest
-from Agent_Recipies.pipelines.deployment.register_model import LogAndRegisterModelJob
+from llmops_project.pipelines.deployment.register_model import LogAndRegisterModelJob
 
 # %% IMPORTS
 
@@ -13,7 +13,7 @@ from Agent_Recipies.pipelines.deployment.register_model import LogAndRegisterMod
         (
             "test_model",
             "champion",
-            "/src/Agent_Recipies/models/chatbot_with_guardrails.py",
+            "/src/llmops_project/models/chatbot_with_guardrails.py",
             "/confs/rag_chain_config.yaml",
             "http://localhost:6333",
         ),

@@ -1,7 +1,7 @@
 import typing as T
 
-from Agent_Recipies.pipelines import base
-from Agent_Recipies.pipelines.monitoring.post_deploy_eval import MonitoringEvalJob
+from llmops_project.pipelines import base
+from llmops_project.pipelines.monitoring.post_deploy_eval import MonitoringEvalJob
 from pathlib import Path
 
 
@@ -39,8 +39,8 @@ class MonitoringJob(base.Job, frozen=True):  # type: ignore[misc]
 
 
 if __name__ == "__main__":
-    from Agent_Recipies import settings
-    from Agent_Recipies.io import configs
+    from llmops_project import settings
+    from llmops_project.io import configs
 
     script_dir = str(Path(__file__).parent.parent.parent.parent.parent)
     config_files = ["/rag_chain_config.yaml", "/monitoring.yaml"]

@@ -3,7 +3,7 @@ from pathlib import Path
 
 import mlflow
 import pandas as pd
-from Agent_Recipies.pipelines import base
+from llmops_project.pipelines import base
 from mlflow import MlflowClient
 
 
@@ -177,8 +177,8 @@ class EvaluateModelJob(base.Job):  # type: ignore[misc]
 if __name__ == "__main__":
     from pathlib import Path
 
-    from Agent_Recipies import settings
-    from Agent_Recipies.io import configs
+    from llmops_project import settings
+    from llmops_project.io import configs
 
     script_dir = str(Path(__file__).parent.parent.parent.parent.parent)
     config_files = ["/monitoring.yaml"]

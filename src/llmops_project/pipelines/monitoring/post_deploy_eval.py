@@ -6,7 +6,7 @@ from typing import Optional
 
 import mlflow
 import plotly.graph_objects as go
-from Agent_Recipies.pipelines import base
+from llmops_project.pipelines import base
 from plotly.subplots import make_subplots
 import pandas as pd
 
@@ -183,8 +183,8 @@ class MonitoringEvalJob(base.Job):  # type: ignore[misc]
 if __name__ == "__main__":
     from pathlib import Path
 
-    from Agent_Recipies import settings
-    from Agent_Recipies.io import configs
+    from llmops_project import settings
+    from llmops_project.io import configs
 
     script_dir = str(Path(__file__).parent.parent.parent.parent.parent)
     config_files = ["/monitoring.yaml"]
