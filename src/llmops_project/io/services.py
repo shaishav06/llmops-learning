@@ -127,10 +127,8 @@ class MlflowService(Service):  # type: ignore[misc]
         raise
 
     # server uri
-    tracking_uri: str = "arn:aws:sagemaker:us-east-1:407995386968:mlflow-tracking-server/ci-agent-studio-playground"  # "http://127.0.0.1:5000"
-    registry_uri: str = (
-        "arn:aws:sagemaker:us-east-1:407995386968:mlflow-tracking-server/ci-agent-studio-playground"
-    )
+    tracking_uri: str = "http://127.0.0.1:5000"
+    registry_uri: str = "http://127.0.0.1:5000"
     # experiment
     experiment_name: str = "rag_chatbot_experiment"
     # registry
