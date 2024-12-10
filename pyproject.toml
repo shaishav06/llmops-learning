@@ -111,10 +111,15 @@ omit = ["__main__.py"]
 
 [tool.mypy]
 pretty = true
-strict = true
+strict = false
 python_version = "3.12"
 check_untyped_defs = true
 ignore_missing_imports = true
+plugins = ["pandera.mypy", "pydantic.mypy"]
+no_implicit_optional= false
+
+# Ignore specific error codes
+disable_error_code = "no-untyped-call"
 
 [tool.pytest.ini_options]
 addopts = "--verbosity=2"

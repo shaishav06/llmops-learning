@@ -4,9 +4,7 @@ import typing as T
 from pathlib import Path
 
 import dotenv
-import mlflow
 from langchain_aws import BedrockEmbeddings
-from langchain_community.vectorstores import FAISS
 from llmops_project.io import services
 from llmops_project.io.vector_db import QdrantVectorDB
 from llmops_project.pipelines import base
