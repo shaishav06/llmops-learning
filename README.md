@@ -1,11 +1,10 @@
 # LLMOps Python Pacakge
 
-[![check.yml](https://github.com/HylandSoftware/Agent-Recipies/actions/workflows/check.yml/badge.svg)](https://github.com/HylandSoftware/Agent-Recipies/actions/workflows/check.yml)
-[![publish.yml](https://github.com/HylandSoftware/Agent-Recipies/actions/workflows/publish.yml/badge.svg)](https://github.com/HylandSoftware/Agent-Recipies/actions/workflows/publish.yml)
-[![Documentation](https://img.shields.io/badge/documentation-available-brightgreen.svg)](https://HylandSoftware.github.io/Agent-Recipies/)
-[![License](https://img.shields.io/github/license/HylandSoftware/Agent-Recipies)](https://github.com/HylandSoftware/Agent-Recipies/blob/main/LICENCE.txt)
-[![Release](https://img.shields.io/github/v/release/HylandSoftware/Agent-Recipies)](https://github.com/HylandSoftware/Agent-Recipies/releases)
-
+[![check.yml](https://github.com/callmesora/llmops-project/actions/workflows/check.yml/badge.svg)](https://github.com/callmesora/llmops-project/actions/workflows/check.yml)
+[![publish.yml](https://github.com/callmesora/llmops-project/actions/workflows/publish.yml/badge.svg)](https://github.com/callmesora/llmops-project/actions/workflows/publish.yml)
+[![Documentation](https://img.shields.io/badge/documentation-available-brightgreen.svg)](https://callmesora.github.io/llmops-project/)
+[![License](https://img.shields.io/github/license/callmesora/llmops-project)](https://github.com/callmesora/llmops-project/blob/main/LICENCE.txt)
+[![Release](https://img.shields.io/github/v/release/callmesora/llmops-project)](https://github.com/callmesora/llmops-project/releases)
 
 **This repository contains a Python code base with best practices designed to support your LLMOps initiatives.**
 
