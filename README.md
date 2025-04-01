@@ -151,7 +151,7 @@ The main variations here is that we the deployment pipeline is orchestrated in t
 # Install
 
 This section details the requirements, actions, and next steps to kickstart your LLMOps project.
-
+---
 ## Prerequisites
 
 - [Python>=3.10](https://www.python.org/downloads/): to benefit from [the latest features and performance improvements](https://docs.python.org/3/whatsnew/3.12.html)
